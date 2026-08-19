@@ -21,14 +21,28 @@ function App() {
 
   return (
     <main>
+      <header className="brand">
+        <img src="/logo.png" alt="Aidea" />
+        <p>Together, we design what's next.</p>
+      </header>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input id="name" name="name" type="text" required />
+        <div className="form-container">
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
 
-        <p>How many times do you...?</p>
-        <input id="answer" name="answer" type="number" min="0" step="1" required />
+          <p>How many times do you...?</p>
+          <input
+            id="answer"
+            name="answer"
+            type="number"
+            min="0"
+            step="1"
+            placeholder="Enter a number"
+            required
+          />
 
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
       {answer !== '' && <p>{answer} times a week</p>}
     </main>
